@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('Kelas');
             $table->string('Jurusan');
             $table->string('Semester');
+            $table->string('Alamat');
             $table->timestamps();
         });
     }

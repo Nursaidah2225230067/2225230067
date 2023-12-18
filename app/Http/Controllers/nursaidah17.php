@@ -36,17 +36,19 @@ class nursaidah17 extends Controller
             'Nim'=> 'required',
             'Kelas'=> 'required',
             'Jurusan'=> 'required',
-            'Semester'=> 'required'
+            'Semester'=> 'required',
+            'Alamat'=> 'required'
         ]);
         $data=[
             'Nama'=> $request->input('Nama'),
             'Nim'=> $request->input('Nim'),
             'Kelas'=> $request->input('Kelas'),
             'Jurusan'=> $request->input('Jurusan'),
-            'Semester'=> $request->input('Semester')
+            'Semester'=> $request->input('Semester'),
+            'Alamat'=> $request->input('Alamat')
         ];
         nursaidah::create($data);
-        return redirect('isian');
+        return redirect()->route('isian.index')->with('success', 'Data Berhasil Ditambahkan!');
     }
 
     /**
@@ -74,14 +76,16 @@ class nursaidah17 extends Controller
             'Nim'=> 'required',
             'Kelas'=> 'required',
             'Jurusan'=> 'required',
-            'Semester'=> 'required'
+            'Semester'=> 'required',
+            'Alamat'=> 'required'
         ]);
         $data=[
             'Nama'=> $request->input('Nama'),
             'Nim'=> $request->input('Nim'),
             'Kelas'=> $request->input('Kelas'),
             'Jurusan'=> $request->input('Jurusan'),
-            'Semester'=> $request->input('Semester')
+            'Semester'=> $request->input('Semester'),
+            'Alamat'=> $request->input('Alamat')
         ];
         nursaidah::where('Nama',$id)->update($data);
         return redirect('isian')->with('success','Data Berhasil di Update!');

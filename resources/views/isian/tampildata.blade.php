@@ -1,8 +1,9 @@
 @extends('layout.nur')
 @section('kontent')
-<a href="/" class= "btn btn-primary">Tambah Data Pengunjung Perpustakaan</a>
+<h3 class="card-title text-center">Data Pengunjung Perpustakaan<br>FKIP UNTIRTA</br></h3>
+<br><a href="/" class= "btn btn-primary">Tambah Data Pengunjung</a></br>
 <p></p>
-<table class=table border= "2" cellpadding= "10" cellspacing="0">
+<table class=table border= "15" cellpadding= "25" cellspacing="0">
     <thead>
         <tr>
             <th>Nama</th>
@@ -10,6 +11,7 @@
             <th>Kelas</th>
             <th>Jurusan</th>
             <th>Semester</th>
+            <th>Alamat</th>
             <th>Aksi</th>
         </tr>
     </thead>
@@ -21,6 +23,7 @@
             <td>{{$item->Kelas}}</td>
             <td>{{$item->Jurusan}}</td>
             <td>{{$item->Semester}}</td>
+            <td>{{$item->Alamat}}</td>
             <td>
                 <a class='btn btn-warning btn-sm' href="{{url('/isian/'.$item->Nama.'/edit')}}">Edit</a>
                 <form onsubmit="return confirm('Apakah Yakin?')" class="d-inline" action="{{'/isian/'.$item->Nama}}" method="post"> @csrf @method('DELETE')
